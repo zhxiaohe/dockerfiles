@@ -1,6 +1,6 @@
-### 准备ubuntu基础镜像
+### 准备centos基础镜像
 ```
-$docker pull ubuntu:latest
+$docker pull centos:latest
 ```
 
 ### 准备SSH登录用的公钥
@@ -18,7 +18,7 @@ $tree .
 └── authorized_keys
 
 # 开始构建
-$docker build -t nick/ubuntu_sshd . # 最后有一个 . 表示当前目录，nick/ubuntu_sshd 表示 用户名/镜像名
+$docker build -t nick/centos_sshd . # 最后有一个 . 表示当前目录，nick/centos_sshd 表示 用户名/镜像名
 
 # 查看构建好的容器
 $docker images
@@ -31,7 +31,7 @@ $docker inspect nick/ubuntu_sshd
 
 ### 启动容器
 ```
-$docker run -d -p 62522:22 -h ssh_host --name ssh_container nick/ubuntu_sshd #后台启动 -d，端口映射 -p, 指定主机名 -h,给容器起名字 --name xxx
+$docker run -d -p 62523:22 -h ssh_host_centos --name ssh_for_centos nick/centos_sshd #后台启动 -d，端口映射 -p, 指定主机名 -h,给容器起名字 --name xxx
 
 $docker ps -a #查看
 ```
@@ -39,20 +39,20 @@ $docker ps -a #查看
 ### 进入容器
 ```
 # 使用ssh连接进入
-$ssh root@localhost -p 62522
+$ssh root@localhost -p 62523
 
 # 使用docker 自带的工具进入容器内部
-$docker exec -ti ssh_container /bin/bash
+$docker exec -ti ssh_for_centos /bin/bash
 ```
 
 ### 补充
 
 #### 如何删除容器
 ```
-$docker rmi ssh_container
+$docker rmi ssh_for_centos
 ```
 
 #### 如何删除镜像
 ```
-$docker rmi nick/ubuntu_sshd
+$docker rmi nick/centos_sshd
 ```
