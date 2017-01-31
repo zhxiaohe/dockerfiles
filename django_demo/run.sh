@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # 脚本用于初始化Django环境,并启动Django开发环境
 export PATH=$PATH
 

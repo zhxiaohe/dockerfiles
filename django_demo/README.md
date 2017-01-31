@@ -61,7 +61,7 @@ $docker logs -f django_demo  # 指定容器名称，查看启动日志
 ```bash
 # 启动容器
 $docker run -d --name django_demo -v /Users/nick/mycode/dockerfiles/django_demo/demo:/opt/demo -e DEMO=outside -P nick/django_demo:0.1
-解释： run -d 表示后台运行容器, --name django_name表示指定容器名称为django_name(注意要避免名字冲突), -v xxx:zzz 表示将本地目录xxx挂载到容器内部的zzz目录
+解释： run -d 表示后台运行容器, --name django_demo表示指定容器名称为django_demo(注意要避免名字冲突), -v xxx:zzz 表示将本地目录xxx挂载到容器内部的zzz目录
       -e xxx=zzz 表示指定环境变量xxx的值为zzz, -P 表示端口映射, 最后的nick/django_demo:0.1 表示镜像名称
 
 # 查看容器
