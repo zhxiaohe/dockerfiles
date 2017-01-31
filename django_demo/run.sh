@@ -8,9 +8,13 @@ StartProject() {
         django-admin startproject demo /opt/demo
         mkdir /opt/demo/templates
         echo "=> demo 项目创建完毕, 启动demo项目, 用浏览器访问 http://127.0.0.1:8080"
+        python /opt/demo/manage.py makemigrations
+        python /opt/demo/manage.py migrate
         python /opt/demo/manage.py runserver 0.0.0.0:8080
     elif [[ -f "/opt/demo/manage.py" ]];then
         echo "=> /opt/demo 目录下已经存在项目, 将启动已存在的项目, 用浏览器访问 http://127.0.0.1:8080"
+        python /opt/demo/manage.py makemigrations
+        python /opt/demo/manage.py migrate
         python /opt/demo/manage.py runserver 0.0.0.0:8080
     fi
 }
