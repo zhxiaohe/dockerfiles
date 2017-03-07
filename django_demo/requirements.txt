@@ -1,6 +1,7 @@
 appdirs==1.4.0
 Django==1.9.12
 djangorestframework==3.5.3
+django-cors-headers==2.0.2
 packaging==16.8
 pyparsing==2.1.10
 six==1.10.0
