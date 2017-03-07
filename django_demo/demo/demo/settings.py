@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'comments',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -56,9 +57,7 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'demo.urls'
 
-CORS_ORIGIN_WHITELIST = (
-    '*',
-)
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
