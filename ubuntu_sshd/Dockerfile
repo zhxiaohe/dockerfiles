@@ -16,7 +16,7 @@ RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restri
 RUN apt-get update
 
 # install basic software
-RUN apt-get install vim dmidecode curl wget python2.7 python-dev iproute2 util-linux pciutils sysstat git iputils-ping telnet strace ltrace lsof openssl libssl-dev libpcre3 libpcre3-dev zlib1g-dev tree -y
+RUN apt-get install vim dmidecode curl wget python2.7 python-dev iproute2 util-linux pciutils sysstat git iputils-ping telnet strace ltrace lsof openssl libssl-dev libpcre3 libpcre3-dev zlib1g-dev tree tzdata -y
 RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python2.7
 
 # install ssh daemon
@@ -36,6 +36,7 @@ RUN chmod 755 /run.sh
 RUN rm -rf /var/lib/apt/lists/*
 
 # set timezone
+RUN dpkg-reconfigure tzdata
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
 # set port

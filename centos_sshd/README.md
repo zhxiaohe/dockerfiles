@@ -49,7 +49,7 @@ $docker exec -ti ssh_for_centos /bin/bash
 
 #### 如何删除容器
 ```
-$docker rmi ssh_for_centos
+$docker rm ssh_for_centos
 ```
 
 #### 如何删除镜像
