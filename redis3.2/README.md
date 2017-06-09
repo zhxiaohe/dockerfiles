@@ -62,8 +62,5 @@ $ redis-cli -p 32770
 
 # 连接SSH
 $ ssh root@127.0.0.1 -p 32771
-The authenticity of host '[127.0.0.1]:32771 ([127.0.0.1]:32771)' can't be established.
-ECDSA key fingerprint is SHA256:klp+JF+LQzbz1AyajKT+SKWJjB9a6lQ/Wc4FHOEyt4Y.
-Are you sure you want to continue connecting (yes/no)? yes
 ……省略……
 ```
