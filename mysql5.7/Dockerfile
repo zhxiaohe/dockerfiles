@@ -23,7 +23,7 @@ VOLUME  ["/var/lib/mysql/log", "/var/lib/mysql/data", "/var/lib/mysql/redolog", 
 # install basic software and sshd service
 RUN yum update -y
 RUN yum install vim curl wget python-devel iproute util-linux sysstat iputils lsof tree epel-release libaio-devel -y
-RUN yum update
+RUN yum update -y
 RUN yum install supervisor pwgen openssh-server openssh openssh-clients -y
 RUN mkdir -p /var/run/sshd
 RUN mkdir -p /root/.ssh

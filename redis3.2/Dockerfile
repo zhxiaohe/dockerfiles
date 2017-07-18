@@ -5,7 +5,7 @@ MAINTAINER from ibash.cc by Nick
 # install basic software and sshd service
 RUN yum update -y
 RUN yum install vim curl wget python-devel iproute util-linux sysstat iputils lsof tree epel-release libaio-devel make gcc -y
-RUN yum update
+RUN yum update -y
 RUN yum install supervisor pwgen openssh-server openssh openssh-clients -y
 RUN mkdir -p /var/run/sshd
 RUN mkdir -p /root/.ssh
